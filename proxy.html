@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OAuth Proxy</title>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const authCode = new URLSearchParams(window.location.search).get('code');
+
+            localStorage.setItem('oauth_code', authCode);
+
+            window.close();
+        });
+    </script>
+</body>
+</html>
