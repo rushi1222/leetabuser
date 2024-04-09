@@ -1,16 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OAuth Proxy</title>
 </head>
 <body>
+    <div id="content">
+        <p>Processing your request...</p>
+    </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const authCode = new URLSearchParams(window.location.search).get('code');
-
             localStorage.setItem('oauth_code', authCode);
 
-            window.close();
+            // Update the message to indicate completion
+            document.getElementById('content').innerHTML = '<p>Authorization successful! You can close this window.</p>';
+
+            // Consider adding a timeout before closing to ensure the user sees the message
+            setTimeout(() => {
+                window.close();
+            }, 2000); // Close the window after 2 seconds
         });
     </script>
 </body>
