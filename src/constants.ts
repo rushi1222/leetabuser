@@ -1,4 +1,4 @@
-import config from './config.ts';
+import config from './config';
 
 export const GITHUB_CLIENT_ID: string = config.GITHUB_CLIENT_ID;
 export const GITHUB_CLIENT_SECRET: string = config.GITHUB_CLIENT_SECRET;
